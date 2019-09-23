@@ -22,10 +22,10 @@ def create_image_data_generator(target_size, rescale, path, batch_size, class_mo
                                         zoom_range=zoom_range,
                                         horizontal_flip=horizontal_flip)
 
-    data_generator.flow_from_directory(path,
+    generator = data_generator.flow_from_directory(path,
                                        class_mode=class_mode,
                                        target_size=target_size,
                                        shuffle=shuffle,
                                        batch_size=batch_size)
 
-    return data_generator
+    return generator
